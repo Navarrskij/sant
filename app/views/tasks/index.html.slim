@@ -1,21 +1,66 @@
-h1 Listing tasks
+h1 To do
 
 table
   thead
     tr
       th Content
+      th State
       th
       th
       th
 
   tbody
-    - @tasks.each do |task|
+    - @to_do.each do |task|
       tr
         td = task.content
+        td = task.state
         td = link_to 'Show', task
         td = link_to 'Edit', edit_task_path(task)
         td = link_to 'Destroy', task, data: { confirm: 'Are you sure?' }, method: :delete
 
 br
 
+h1 Doing
+
+table
+  thead
+    tr
+      th Content
+      th State
+      th
+      th
+      th
+
+  tbody
+    - @doing.each do |task|
+      tr
+        td = task.content
+        td = task.state
+        td = link_to 'Show', task
+        td = link_to 'Edit', edit_task_path(task)
+        td = link_to 'Destroy', task, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
+
+h1 Done
+
+table
+  thead
+    tr
+      th Content
+      th State
+      th
+      th
+      th
+
+  tbody
+    - @done.each do |task|
+      tr
+        td = task.content
+        td = task.state
+        td = link_to 'Show', task
+        td = link_to 'Edit', edit_task_path(task)
+        td = link_to 'Destroy', task, data: { confirm: 'Are you sure?' }, method: :delete
+
+br
 = link_to 'New Task', new_task_path
