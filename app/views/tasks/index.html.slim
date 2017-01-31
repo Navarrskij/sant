@@ -1,66 +1,13 @@
-h1 To do
-
-table
-  thead
-    tr
-      th Content
-      th State
-      th
-      th
-      th
-
-  tbody
-    - @to_do.each do |task|
-      tr
-        td = task.content
-        td = task.state
-        td = link_to 'Show', task
-        td = link_to 'Edit', edit_task_path(task)
-        td = link_to 'Destroy', task, data: { confirm: 'Are you sure?' }, method: :delete
-
-br
-
-h1 Doing
-
-table
-  thead
-    tr
-      th Content
-      th State
-      th
-      th
-      th
-
-  tbody
-    - @doing.each do |task|
-      tr
-        td = task.content
-        td = task.state
-        td = link_to 'Show', task
-        td = link_to 'Edit', edit_task_path(task)
-        td = link_to 'Destroy', task, data: { confirm: 'Are you sure?' }, method: :delete
-
-br
-
-h1 Done
-
-table
-  thead
-    tr
-      th Content
-      th State
-      th
-      th
-      th
-
-  tbody
-    - @done.each do |task|
-      tr
-        td = task.content
-        td = task.state
-        td = link_to 'Show', task
-        td = link_to 'Edit', edit_task_path(task)
-        td = link_to 'Destroy', task, data: { confirm: 'Are you sure?' }, method: :delete
+.row
+  .col-md-4
+    h2.text-center Todo
+    = render @to_do
+  .col-md-4
+    h2.text-center Doing
+    = render @doing
+  .col-md-4
+    h2.text-center Done
+    = render @done
 
 br
 = link_to 'New Task', new_task_path

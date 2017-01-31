@@ -1,0 +1,22 @@
+
+div class="panel panel-info"
+	.panel-heading
+      = link_to edit_task_path(task) do
+        h5 Created #{time_ago_in_words(task.created_at)} ago
+	.panel-body
+		= task.content
+	div class="panel-footer text-center"
+    div class="btn-group btn-group-justified"
+    	- if task.state == 'doing'
+    		= link_to change_task_path(task, state: "to_do"), method: :put, class: "btn btn-info btn-md btn-block" do
+    			i class='fa fa-arrow-left'
+    		= link_to change_task_path(task, state: "done"), method: :put,  class: "btn btn-info btn-md btn-block" do
+    			i class='fa fa-arrow-right'
+    	- elsif task.state == 'done'
+    		= link_to change_task_path(task, state: "doing"), method: :put, class: "btn btn-info btn-md btn-block" do
+    			i class='fa fa-arrow-left'
+    	- else 
+    		= link_to change_task_path(task, state: "doing"), method: :put, class: "btn btn-info btn-md btn-block" do
+    			i class='fa fa-arrow-right'
+
+ 
