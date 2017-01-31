@@ -2,10 +2,12 @@
 div class="panel panel-info"
 	.panel-heading
       = link_to edit_task_path(task) do
-        h5 Created #{time_ago_in_words(task.created_at)} ago
+        h5 Created #{time_ago_in_words(task.created_at)} ago #{link_to 'X', task_path(task), method: :delete, data: {confirm: "Are you sure?"}, class: 'pull-right'}
 	.panel-body
 		= task.content
 	div class="panel-footer text-center"
+    div class="panel-body"
+      = raw(task.content_html)
     div class="btn-group btn-group-justified"
     	- if task.state == 'doing'
     		= link_to change_task_path(task, state: "to_do"), method: :put, class: "btn btn-info btn-md btn-block" do
