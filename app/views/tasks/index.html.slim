@@ -1,13 +1,14 @@
-.row
-  .col-md-4
-    h2.text-center Todo
-    = render @to_do
-  .col-md-4
-    h2.text-center Doing
-    = render @doing
-  .col-md-4
-    h2.text-center Done
-    = render @done
+.langing
+	.row
+	  .col-md-4
+	    h2.text-center Todo
+	    = render @to_do
+	  .col-md-4
+	    h2.text-center Doing
+	    = render @doing
+	  .col-md-4
+	    h2.text-center Done
+	    = render @done
 
-br
-= link_to 'New Task', new_task_path
+	br
+	= link_to 'New Task', new_task_path
