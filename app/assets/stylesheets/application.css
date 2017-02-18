@@ -13,9 +13,6 @@
  *= require_tree .
  *= require font-awesome
  *= require_self
- @import bootstrap
  */
+ @import bootstrap
 
-.landing {
-  background: image-url('fone.jpg');
-}

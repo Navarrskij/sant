@@ -52,7 +52,12 @@ GEM
     auto_html (1.6.4)
       redcarpet (~> 3.1)
       rinku (~> 1.5.0)
+    autoprefixer-rails (6.7.2)
+      execjs
     bcrypt (3.1.11)
+    bootstrap-sass (3.3.7)
+      autoprefixer-rails (>= 5.2.1)
+      sass (>= 3.3.4)
     builder (3.2.3)
     byebug (9.0.6)
     coffee-rails (4.2.1)
@@ -209,6 +214,7 @@ PLATFORMS
 
 DEPENDENCIES
   auto_html (~> 1.6)
+  bootstrap-sass
   byebug
   coffee-rails (~> 4.2)
   devise
